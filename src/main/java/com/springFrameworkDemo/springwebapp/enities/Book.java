@@ -14,7 +14,7 @@ public class Book {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "book_id", nullable = false)
-    private Long bookId;
+    private Long id;
 
     private String name;
     private String isdn;
@@ -32,12 +32,12 @@ public class Book {
 //    private Set<Author> authors = new HashSet<>();
 
 
-    public Long getBookId() {
-        return bookId;
+    public Long getId() {
+        return id;
     }
 
-    public void setBookId(Long bookId) {
-        this.bookId = bookId;
+    public void setId(Long bookId) {
+        this.id = bookId;
     }
 
     public Book(String name, String isdn) {
@@ -53,12 +53,12 @@ public class Book {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Book book = (Book) o;
-        return Objects.equals(bookId, book.bookId) && Objects.equals(name, book.name) && Objects.equals(isdn, book.isdn);
+        return Objects.equals(id, book.id) && Objects.equals(name, book.name) && Objects.equals(isdn, book.isdn);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(bookId, name, isdn);
+        return Objects.hash(id, name, isdn);
     }
 
     public String getName() {
